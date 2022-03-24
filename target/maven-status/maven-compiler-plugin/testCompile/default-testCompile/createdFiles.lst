@@ -1,0 +1,4 @@
+com\icabank\pages\BasePage.class
+com\icabank\tests\RaknaPrivatlanTest.class
+com\icabank\pages\HurMucketLanaPage.class
+com\icabank\pages\RaknaPrivatlanPage.class
