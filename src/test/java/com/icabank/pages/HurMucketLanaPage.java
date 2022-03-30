@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class HurMucketLanaPage extends BasePage{
 
     @FindBy (xpath = "//*[@id=\"root\"]/div/main/section/section/form/div[1]/div/label[1]/div")
@@ -71,5 +70,4 @@ public class HurMucketLanaPage extends BasePage{
     public HurMucketLanaPage() {
         PageFactory.initElements(Driver.get(), this);
     }
-
 }

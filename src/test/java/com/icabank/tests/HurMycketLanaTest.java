@@ -54,7 +54,6 @@ public class HurMycketLanaTest extends TestBase{
         extentLogger.info("Verify that 'Gå vidare till ansökan' button is appeared");
         Assert.assertTrue(lanaFunction.goVidareButton.isDisplayed());
         extentLogger.pass("PASSED");
-
 }
 
     @Test
@@ -104,7 +103,6 @@ public class HurMycketLanaTest extends TestBase{
         extentLogger.info("Verify that 'Gå vidare till ansökan' button is appeared");
         Assert.assertTrue(lanaFunction.goVidareButton.isDisplayed());
         extentLogger.pass("PASSED");
-
     }
 
     @Test
@@ -153,7 +151,6 @@ public class HurMycketLanaTest extends TestBase{
         extentLogger.info("Verify that 'Dessvärre tror vi inte att vi kan erbjuda dig ett lån.' message is appeared");
         Assert.assertTrue(lanaFunction.erbjudaInteMessage.getText().contains("Dessvärre tror vi inte"));
         extentLogger.pass("PASSED");
-
     }
 
     @Test
@@ -207,9 +204,5 @@ public class HurMycketLanaTest extends TestBase{
         extentLogger.info("Verify that 'Gå vidare till ansökan' link has been changed");
         Assert.assertTrue(driver.getCurrentUrl().contains(expectedAmount));
         extentLogger.pass("PASSED");
-
     }
-
-
-
 }

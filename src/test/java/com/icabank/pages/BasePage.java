@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-
     @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div[2]/div/div[2]/button[1]")
     public WebElement cookiesAccept;
 
@@ -74,7 +73,4 @@ public abstract class BasePage {
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
-
-
-
 }

@@ -5,24 +5,22 @@ import com.icabank.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RaknaPrivatlanTest extends TestBase{
-
+public class RaknaPrivatlanTest extends TestBase {
 
     @Test
-    public void calculatePrivatlanTest() throws InterruptedException {
-
+    public void calculatePrivatlanTest() {
         extentLogger = report.createTest("Rakna pa privatlan link verification test");
         RaknaPrivatlanPage privatlan = new RaknaPrivatlanPage();
 
-        extentLogger.info("Accep cookies");
+        extentLogger.info("Accept cookies");
         privatlan.cookiesAccept.click();
 
-        extentLogger.info("Enter"+ConfigurationReader.get("loan_1")+"as amount of loan in the 'Hur mycket vill du låna?' box");
+        extentLogger.info("Enter" + ConfigurationReader.get("loan_1") + "as amount of loan in the 'Hur mycket vill du låna?' box");
         Assert.assertTrue(privatlan.hurMycketLanaBox.isEnabled());
         clearCurrentAmount(privatlan.hurMycketLanaBox);
         enterAmount(ConfigurationReader.get("loan_1"));
 
-        extentLogger.info("Enter"+ConfigurationReader.get("period")+" as period of loan in the'Och under hur lång tid?' box");
+        extentLogger.info("Enter" + ConfigurationReader.get("period") + " as period of loan in the'Och under hur lång tid?' box");
         Assert.assertTrue(privatlan.hurLangTidBox.isEnabled());
         clearCurrentAmount(privatlan.hurLangTidBox);
         enterAmount(ConfigurationReader.get("period"));
@@ -33,10 +31,5 @@ public class RaknaPrivatlanTest extends TestBase{
         extentLogger.info("Verify that the link has been changed");
         Assert.assertTrue(driver.getCurrentUrl().contains(ConfigurationReader.get("loan_1")));
         extentLogger.pass("PASSED");
-
     }
-
-
-
 }
-

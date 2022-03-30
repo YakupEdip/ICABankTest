@@ -30,7 +30,6 @@ public class TestBase {
 
     @BeforeTest
     public void setUpTest(){
-
         report = new ExtentReports();
         String projectPath = System.getProperty("user.dir");
         String path = projectPath + "/test-output/report.html";
@@ -42,34 +41,26 @@ public class TestBase {
         report.setSystemInfo("Environment","GUI");
         report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
         report.setSystemInfo("OS",System.getProperty("os.name"));
-
-
-
     }
 
     @BeforeMethod
     public void setUp(){
-
         driver = Driver.get();
         //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         actions = new Actions(driver);
         wait = new WebDriverWait(driver,10);
         driver.get(ConfigurationReader.get("url"));
-
     }
 
     @AfterMethod
     public void tearDown(ITestResult result) throws InterruptedException, IOException {
-
         if(result.getStatus()==ITestResult.FAILURE){
-
             extentLogger.fail(result.getName());
             String screenShotPath = BrowserUtils.getScreenshot(result.getName());
 
             extentLogger.addScreenCaptureFromPath(screenShotPath);
             extentLogger.fail(result.getThrowable());
-
         }
         Thread.sleep(2000);
         Driver.closeDriver();
@@ -77,9 +68,7 @@ public class TestBase {
 
     @AfterTest
     public void tearDownTest(){
-
         report.flush();
-
     }
 
     public void clearCurrentAmount(WebElement element) {
@@ -87,7 +76,6 @@ public class TestBase {
         element.click();
         Actions action = new Actions(driver);
         for (int i = 0; i < boxValue.length(); i++) {
-
             action.sendKeys(Keys.BACK_SPACE);
             action.build().perform();
         }
@@ -130,5 +118,4 @@ public class TestBase {
         }
         return amount;
     }
-
 }

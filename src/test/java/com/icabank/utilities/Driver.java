@@ -1,13 +1,11 @@
 package com.icabank.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 
 public class Driver {
 
@@ -37,11 +35,8 @@ public class Driver {
                     Dimension d = new Dimension(400,538);
                     driver.manage().window().setSize(d);
                     break;
-
             }
-
         }
-
         return driver;
     }
 

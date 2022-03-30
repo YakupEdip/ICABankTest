@@ -28,6 +28,4 @@ public class RaknaPrivatlanPage extends BasePage{
     public RaknaPrivatlanPage() {
         PageFactory.initElements(Driver.get(), this);
     }
-
-
 }

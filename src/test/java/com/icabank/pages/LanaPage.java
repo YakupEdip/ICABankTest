@@ -13,6 +13,4 @@ public class LanaPage extends BasePage{
     public LanaPage() {
         PageFactory.initElements(Driver.get(), this);
     }
-
-
 }
